@@ -45,5 +45,12 @@ public class UserControllerTest {
 		when(userService.save(any(User.class))).thenReturn(user);
 		return user;
 	}
+	
+	public void createUserTest() {
+		final User myUser = new User();
+		when(userService.save(any(User.class))).thenReturn(myUser);
+		assertEquals(userController.createUser(new User()), myUser);
+		
+	}
 
 }
